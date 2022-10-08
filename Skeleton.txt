@@ -1,0 +1,53 @@
+Fill machine with items
+Fill machine with money
+Make sure machine is filled
+while true:
+    Re make sure machine has enough money and items
+    if not:
+        warn the admin that machine need to be refilled
+        power off machine
+    Display items
+    Wait until customer choose an item
+    if item exists:
+        display item to customer with its associated data
+        ask customer if he wants to buy it
+        if yes:
+            ask customer in which slot he will pay
+            receive the slot type
+            if the slot was notes or coins:
+                receive money
+                check if the slot can accept the category of money the customer inserted
+                if yes:
+                    accept the money
+                    while true:
+                        check if sum of the cash that the customer inserted is more than or equals the item price
+                        if not:
+                            ask the customer to insert more money in order to have the whole price, or press 1 to cancel the process
+                            if customer pressed one:
+                                cancel process and continue;
+                            else if customer inserted money:
+                                continue
+                        else if money is enough:
+                            give the customer his item
+                            decrease the capacity of this item by one
+                            collect the cash
+                            calculate the return
+                            if there is a return:
+                                calculate how much money to return from each category to the customer
+                                give the money to the customer
+                            else:
+                                continue
+                    if slot was a card:
+                        check if the card is valid
+                        if yes:
+                            check if the card has enough money
+                                if yes:
+                                    pull the money
+                                    give the customer his item
+                                    continue
+                                if not:
+                                    tell the customer that his card does not contain enough money
+                                    cancel process and continue
+                        if not:
+                            tell the customer that his card is not valid
+                            cancel process and continue
